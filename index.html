@@ -63,14 +63,14 @@
         var trumpOutput =
           "<div class='trumpRender'>" +
           "<span class='trumpName'>Trump </span>" +
-          "<span class='trumpScore'>" +
+          "<span class='trumpScore count'>" +
           z +
           "</span>" +
           "</div>";
         var bidenOutput =
           "<div class='bidenRender'>" +
           "<span class='bidenName'>Biden </span>" +
-          "<span class='bidenScore'>" +
+          "<span class='bidenScore count'>" +
           z2 +
           "</span>" +
           "</div>";
@@ -89,6 +89,23 @@
             // Animation complete.
           }
         );
+
+        $(".count").each(function () {
+          $(this)
+            .prop("Counter", 0)
+            .animate(
+              {
+                Counter: $(this).text()
+              },
+              {
+                duration: 2000,
+                easing: "swing",
+                step: function (now) {
+                  $(this).text(Math.ceil(now));
+                }
+              }
+            );
+        });
 
         $("table").hide();
       }
