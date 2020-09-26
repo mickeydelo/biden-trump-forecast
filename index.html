@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/src/styles.scss" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <title>Trump Biden</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="election-display"></div>
+      <div id="csv-display"></div>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    var data;
+    $.ajax({
+      type: "GET",
+      url:
+        "https://projects.fivethirtyeight.com/2020-general-data/presidential_national_toplines_2020.csv",
+      dataType: "text",
+
+      success: function (response) {
+        data = $.csv.toArrays(response);
+        generateHtmlTable(data);
+      },
+
+      complete: function () {
+        var trump =
+          "#csv-display > table > tbody > tr:nth-child(1) > td:nth-child(8)";
+        var biden =
+          "#csv-display > table > tbody > tr:nth-child(1) > td:nth-child(9)";
+
+        $(trump).each(function () {
+          trumpText = $(this).html();
+        });
+
+        $(biden).each(function () {
+          bidenText = $(this).html();
+        });
+
+        //trump
+        var n = (trumpText * 1).toFixed(2);
+        var p = n.replace("0", "");
+        var z = p.replace(".", "");
+        //biden
+        var n2 = (bidenText * 1).toFixed(2);
+        var p2 = n2.replace("0", "");
+        var z2 = p2.replace(".", "");
+
+        var trumpOutput =
+          "<div class='trumpRender'>" +
+          "<span class='trumpName'>Trump </span>" +
+          "<span class='trumpScore'>" +
+          z +
+          "</span>" +
+          "</div>";
+        var bidenOutput =
+          "<div class='bidenRender'>" +
+          "<span class='bidenName'>Biden </span>" +
+          "<span class='bidenScore'>" +
+          z2 +
+          "</span>" +
+          "</div>";
+        document.getElementById("election-display").innerHTML =
+          trumpOutput + bidenOutput;
+
+        $("table").hide();
+      }
+    });
+
+    function generateHtmlTable(data) {
+      var html =
+        '<table  class="table table-condensed table-hover table-striped">';
+
+      if (typeof data[0] === "undefined") {
+        return null;
+      } else {
+        $.each(data, function (index, row) {
+          //bind header
+          if (index == 0) {
+            html += "<tr>";
+
+            html += "</tr>";
+            html += "<tbody>";
+          } else {
+            html += "<tr>";
+            $.each(row, function (index, colData) {
+              html += "<td>";
+              html += colData;
+              html += "</td>";
+            });
+            html += "</tr>";
+          }
+        });
+        html += "</tbody>";
+        html += "</table>";
+        $("#csv-display").append(html);
+      }
+    }
+  });
+</script>
