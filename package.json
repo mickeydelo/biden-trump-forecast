@@ -1,7 +1,7 @@
 {
-  "name": "Trump vs Biden - Forecast",
+  "name": "trump-vs-biden-forecast",
   "version": "1.0.0",
-  "description": "Minimalistic 2020 Presidential Forecast",
+  "description": "Minimalistic 2020 Presidential Forecast.  Data via jQuery-CSV from FiveThirtyEight Github CSV file.",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
@@ -12,16 +12,5 @@
     "@babel/core": "7.2.0",
     "parcel-bundler": "^1.6.1"
   },
-  "keywords": [
-    "javascript",
-    "jquery",
-    "jquery csv",
-    "javascript csv",
-    "politics",
-    "election",
-    "trump",
-    "biden",
-    "trump biden",
-    "2020 election"
-  ]
+  "keywords": []
 }
