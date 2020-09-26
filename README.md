@@ -1,6 +1,6 @@
 # Biden vs Trump Forecast
 
-##Minimalistic 2020 Presidential Forecast
+## Minimalistic 2020 Presidential Forecast
 
 **Demo**: https://trump-biden.netlify.app/
 
