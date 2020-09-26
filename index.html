@@ -13,6 +13,9 @@
     <title>Trump vs Biden - Forecast</title>
   </head>
   <body>
+    <div class="leader-bar"></div>
+    <div class="leader-bar-biden"></div>
+
     <div class="container">
       <div id="election-display"></div>
       <div id="csv-display"></div>
@@ -73,6 +76,9 @@
           "</div>";
         document.getElementById("election-display").innerHTML =
           trumpOutput + bidenOutput;
+
+        var bidenBar = z2 + "%";
+        $(".leader-bar-biden").width(bidenBar);
 
         $("table").hide();
       }
