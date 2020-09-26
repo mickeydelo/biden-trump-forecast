@@ -78,7 +78,17 @@
           trumpOutput + bidenOutput;
 
         var bidenBar = z2 + "%";
-        $(".leader-bar-biden").width(bidenBar);
+        //$(".leader-bar-biden").width(bidenBar);
+        $(".leader-bar-biden").animate(
+          {
+            width: bidenBar
+          },
+          3000,
+          "swing",
+          function () {
+            // Animation complete.
+          }
+        );
 
         $("table").hide();
       }

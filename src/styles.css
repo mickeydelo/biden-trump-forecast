@@ -63,10 +63,11 @@ body {
     font-size: 8em;
   }
   .bidenScore {
-    font-size: 2.4em;
+    font-size: 2.3em;
+    margin-top: -50px;
   }
   .trumpScore {
-    font-size: 2.4em;
+    font-size: 2.3em;
   }
 }
 
