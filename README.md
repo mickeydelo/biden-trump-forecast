@@ -1,5 +1,7 @@
-# biden-trump-forecast
+# Biden vs Trump Forecast
 
-Minimalistic 2020 Presidential Forecast
+##Minimalistic 2020 Presidential Forecast
 
-Data updated daily from FiveThirtyEight: https://github.com/fivethirtyeight/data/tree/master/election-forecasts-2020
+**Demo**: https://trump-biden.netlify.app/
+
+**Data updated daily from FiveThirtyEight**: https://github.com/fivethirtyeight/data/tree/master/election-forecasts-2020
