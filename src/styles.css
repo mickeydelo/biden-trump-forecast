@@ -35,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 10em;
-  padding-top: 20px;
+  padding-top: 100px;
 }
 
 .trumpRender {
@@ -64,6 +64,7 @@ body {
   }
   #election-display > div {
     font-size: 8em;
+    padding-top: 10px;
   }
   .bidenScore {
     font-size: 2.3em;
@@ -81,6 +82,7 @@ body {
     padding-top: 10px;
   }
   #election-display > div {
+    padding-top: 0;
     font-size: 7em;
   }
   .bidenScore {
