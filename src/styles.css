@@ -8,6 +8,7 @@ body {
   height: 20px;
   background: #5768ac;
   position: absolute;
+  top: 0;
 }
 
 .leader-bar {
@@ -15,6 +16,7 @@ body {
   height: 20px;
   background: #fa5a50;
   position: absolute;
+  top: 0;
 }
 
 .container {
@@ -33,6 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 10em;
+  padding-top: 20px;
 }
 
 .trumpRender {
