@@ -66,6 +66,9 @@ body {
     font-size: 8em;
     padding-top: 10px;
   }
+  .trumpRender {
+    padding-top: 20px;
+  }
   .bidenScore {
     font-size: 2.3em;
     margin-top: -50px;
@@ -83,13 +86,16 @@ body {
   }
   #election-display > div {
     padding-top: 0;
-    font-size: 7em;
+    font-size: 6em;
+  }
+  .trumpRender {
+    padding-top: 10px;
   }
   .bidenScore {
-    font-size: 1.6em;
+    font-size: 2.6em;
   }
   .trumpScore {
-    font-size: 1.6em;
+    font-size: 2.6em;
   }
   .leader-bar-biden {
     height: 10px;
