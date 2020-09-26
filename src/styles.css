@@ -53,13 +53,30 @@ body {
   margin-top: -40px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 767px) {
   #election-display {
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 15px;
+    padding-top: 10px;
   }
   #election-display > div {
     font-size: 7em;
+  }
+}
+
+@media (max-width: 1023px) {
+  #election-display {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10px;
+  }
+  #election-display > div {
+    font-size: 8em;
+  }
+  .bidenScore {
+    font-size: 2.5em;
+  }
+  .trumpScore {
+    font-size: 2.5em;
   }
 }
