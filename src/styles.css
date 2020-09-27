@@ -103,3 +103,9 @@ body {
     height: 10px;
   }
 }
+
+@media (max-width: 370px) {
+  #election-display > div {
+    font-size: 4em;
+  }
+}
