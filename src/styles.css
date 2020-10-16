@@ -58,6 +58,15 @@ body {
   margin-top: -40px;
 }
 
+#time-container {
+  color: #b9b9b9;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: small;
+}
+
 @media (max-width: 1023px) {
   #election-display {
     flex-direction: column;

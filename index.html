@@ -6,8 +6,6 @@
       name="viewport"
       content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0"
     />
-    <meta http-equiv="refresh" content="30" />
-
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="HandheldFriendly" content="true" />
@@ -50,6 +48,7 @@
     <div class="leader-bar-biden"></div>
 
     <div class="container">
+      <div id="time-container"></div>
       <div id="election-display"></div>
       <div id="csv-display"></div>
     </div>
@@ -59,7 +58,8 @@
 <script type="text/javascript">
   $(document).ready(function () {
     var data;
-    $.ajax({
+    var geturl;
+    geturl = $.ajax({
       type: "GET",
       url:
         "https://projects.fivethirtyeight.com/2020-general-data/presidential_national_toplines_2020.csv",
@@ -68,6 +68,17 @@
       success: function (response) {
         data = $.csv.toArrays(response);
         generateHtmlTable(data);
+        var timeStamp = geturl.getResponseHeader("Last-Modified");
+        var dateObj = new Date(timeStamp);
+        var curObj = new Date();
+        var newDate = dateObj.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit"
+        });
+        //var dataDate = dateObj.getHours() + ":" + dateObj.getMinutes();
+        //var curDate = curObj.getHours() + ":" + curObj.getMinutes();
+        //var lastUpdated = curDate - dataDate;
+        $("#time-container").text("Last Updated: " + newDate);
       },
 
       complete: function () {
