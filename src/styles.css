@@ -84,7 +84,7 @@ body {
   #election-display {
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 10px;
+    padding-top: 5px;
   }
   #election-display > div {
     padding-top: 0;
