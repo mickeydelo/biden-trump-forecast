@@ -92,7 +92,7 @@ body {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 812px) {
   #election-display {
     flex-direction: column;
     justify-content: flex-start;
@@ -118,22 +118,10 @@ body {
   }
 }
 
-@media (max-width: 370px) {
-  #election-display > div {
-    font-size: 4em;
-  }
-}
-
 @media screen and (orientation: landscape) and (max-device-width: 812px) {
   #election-display {
     flex-direction: row;
     justify-content: space-evenly;
-  }
-}
-
-@media screen and (orientation: landscape) and (height: 375px) {
-  #election-display > div {
-    font-size: 5.5em;
   }
 }
 
