@@ -67,6 +67,7 @@ body {
   font-size: small;
 }
 
+/* Tablet */
 @media (max-width: 1023px) {
   #election-display {
     flex-direction: column;
@@ -89,6 +90,7 @@ body {
   }
 }
 
+/* Mobile and Tablet Portrait */
 @media (max-width: 812px) {
   #election-display {
     flex-direction: column;
@@ -115,13 +117,14 @@ body {
   }
 }
 
+/* Mobile */
 @media (max-width: 425px) {
   #election-display > div {
     font-size: 10.5vh;
   }
 }
 
-/* iPad Pro Portrait*/
+/* iPad Pro Portrait */
 @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   #election-display {
     flex-direction: column;

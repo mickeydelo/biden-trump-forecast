@@ -60,6 +60,7 @@
   $(document).ready(function () {
     var data;
     var geturl;
+    //Get the CSV file from FiveThirtyEight
     geturl = $.ajax({
       type: "GET",
       url:
@@ -67,27 +68,30 @@
       dataType: "text",
 
       success: function (response) {
+        //Convert CSV to Array with jquery-csv plugin
         data = $.csv.toArrays(response);
         generateHtmlTable(data);
+
+        //Get the server date of latest CSV
         var timeStamp = geturl.getResponseHeader("Last-Modified");
         var dateObj = new Date(timeStamp);
-        var curObj = new Date();
+        //Convert date to hh:mm format
         var newDate = dateObj.toLocaleTimeString([], {
           hour: "2-digit",
           minute: "2-digit"
         });
-        //var dataDate = dateObj.getHours() + ":" + dateObj.getMinutes();
-        //var curDate = curObj.getHours() + ":" + curObj.getMinutes();
-        //var lastUpdated = curDate - dataDate;
+        //Write the date to the HTML
         $("#time-container").text("Last Updated: " + newDate);
       },
 
       complete: function () {
+        //Retrieve data from table by very specific selectors
         var trump =
           "#csv-display > table > tbody > tr:nth-child(1) > td:nth-child(8)";
         var biden =
           "#csv-display > table > tbody > tr:nth-child(1) > td:nth-child(9)";
 
+        //Convert data to html
         $(trump).each(function () {
           trumpText = $(this).html();
         });
@@ -96,15 +100,17 @@
           bidenText = $(this).html();
         });
 
-        //trump
+        //Format HTML number to be whole number
+        //Trump
         var n = (trumpText * 1).toFixed(2);
         var p = n.replace("0", "");
         var z = p.replace(".", "");
-        //biden
+        //Biden
         var n2 = (bidenText * 1).toFixed(2);
         var p2 = n2.replace("0", "");
         var z2 = p2.replace(".", "");
 
+        //Write to HTML
         var trumpOutput =
           "<div class='trumpRender'>" +
           "<span class='trumpName'>Trump </span>" +
@@ -119,11 +125,11 @@
           z2 +
           "</span>" +
           "</div>";
-        document.getElementById("election-display").innerHTML =
-          trumpOutput + bidenOutput;
 
+        $("#election-display").html(trumpOutput + bidenOutput);
+
+        //Animation - Top bar blue based on biden score
         var bidenBar = z2 + "%";
-        //$(".leader-bar-biden").width(bidenBar);
         $(".leader-bar-biden").animate(
           {
             width: bidenBar
@@ -151,11 +157,12 @@
               }
             );
         });
-
+        //Hide the CSV table
         $("table").hide();
       }
     });
 
+    //Convert CSV to HTML table
     function generateHtmlTable(data) {
       var html =
         '<table  class="table table-condensed table-hover table-striped">';
