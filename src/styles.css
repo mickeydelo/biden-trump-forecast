@@ -37,7 +37,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 17vh;
-  padding-top: 100px;
+  padding-top: 0px;
 }
 
 .trumpRender {
@@ -115,13 +115,6 @@ body {
   }
   .leader-bar {
     height: 10px;
-  }
-}
-
-@media screen and (orientation: landscape) and (max-device-width: 812px) {
-  #election-display {
-    flex-direction: row;
-    justify-content: space-evenly;
   }
 }
 
