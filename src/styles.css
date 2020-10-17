@@ -68,9 +68,6 @@ body {
 }
 
 @media (max-width: 1023px) {
-}
-
-@media (max-width: 1023px) {
   #election-display {
     flex-direction: column;
     justify-content: flex-start;
@@ -115,6 +112,12 @@ body {
   }
   .leader-bar {
     height: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  #election-display > div {
+    font-size: 10.5vh;
   }
 }
 
