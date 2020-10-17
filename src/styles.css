@@ -36,7 +36,7 @@ body {
 #election-display > div {
   display: flex;
   flex-direction: column;
-  font-size: 10em;
+  font-size: 17vh;
   padding-top: 100px;
 }
 
@@ -68,13 +68,16 @@ body {
 }
 
 @media (max-width: 1023px) {
+}
+
+@media (max-width: 1023px) {
   #election-display {
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 10px;
   }
   #election-display > div {
-    font-size: 8em;
+    font-size: 12.5vh;
     padding-top: 10px;
   }
   .trumpRender {
@@ -97,7 +100,7 @@ body {
   }
   #election-display > div {
     padding-top: 0;
-    font-size: 5.1em;
+    font-size: 10.5vh;
   }
   .trumpRender {
     padding-top: 10px !important;
@@ -131,5 +134,16 @@ body {
 @media screen and (orientation: landscape) and (height: 375px) {
   #election-display > div {
     font-size: 5.5em;
+  }
+}
+
+/* iPad Pro Portrait*/
+@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #election-display {
+    flex-direction: column;
+  }
+  #election-display > div {
+    font-size: 11vh;
+    padding: 0;
   }
 }
